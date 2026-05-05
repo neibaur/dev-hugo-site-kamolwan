@@ -23,15 +23,16 @@ role: |
       url="/uploads/Joy_Kamolowan_Paramee_resume.pdf"
       icon="PDF" >}}
 bio: |
-  I am an accounting and finance professional with hands-on experience in full-cycle
-  bookkeeping, tax preparation, financial reporting, reconciliation, inventory accounting,
-  payroll support, and small business financial operations.
+  Master’s degree in Business Administration – International Business with 5+ years of hands-on experience 
+  in full-cycle bookkeeping and tax preparation. Currently pursuing a B.A. in Accounting (Expected September 2026) 
+  to transition into a professional accounting role.
 
-  My background combines a Master's degree in Business Administration with an International
-  Business focus, more than five years of practical bookkeeping and tax preparation work,
-  and current B.A. in Accounting coursework expected to be completed in September 2026.
-  I bring careful recordkeeping, client service, and operational discipline to accounting,
-  bookkeeping, tax preparation, accounting internship, and junior accountant opportunities.
+  Proven track record managing financial operations for e-commerce and hospitality businesses, 
+  including financial reporting, reconciliation, inventory accounting, and tax compliance. Experienced in 
+  maintaining accurate financial records, preparing monthly reporting, and supporting small business decision-making.
+
+  Actively seeking an accounting internship or entry-level accounting role where I can contribute immediately while 
+  continuing to build expertise in financial reporting, reconciliation, and tax preparation.
 
 affiliations:
   - name: H&R Block
@@ -61,38 +62,46 @@ ongoing:
 
 education:
   - degree: B.A. in Accounting
-    institution: Current accounting degree program
+    institution: Western Governors University
     end: 2026-09-30
     summary: |
-      Expected completion: September 2026. Coursework supports entry-level accounting,
-      bookkeeping, tax preparation, and junior accountant roles.
+      In progress — Expected September 2026.
+
+      Relevant coursework supports entry-level accounting, bookkeeping, tax preparation,
+      and financial reporting roles, with a focus on practical application of accounting
+      principles.
+
+      **Focus areas:** Financial Accounting, Managerial Accounting, Taxation, and Financial Reporting.
     icon: academic-cap
-  - degree: Master's degree in Business Administration - International Business
-    institution: Business Administration graduate program
+  - degree: Master’s degree in Business Administration – International Business
+    institution: University of Florida
     summary: |
+      Completed.
+
       Graduate study focused on international business, business operations, and
       cross-cultural commercial context. Degree title is intentionally stated without
-      using "MBA" unless supported by the official transcript wording.
+      using “MBA” unless supported by the official transcript wording.
     icon: academic-cap
   - degree: B.A. in Business Administration with a minor in Marketing
-    institution: Assumption Universtity (Thailand)
+    institution: Assumption University (Thailand)
     end: 2002-12-15
     summary: |
-      Focused on business, business operations with a minor in Marketing.
+      Completed.
+
+      Undergraduate study in business administration, operations, and marketing.
     icon: academic-cap
 
 experience:
   - role: Tax Preparer
     org: H&R Block
     summary: |
-      {{< landing_anchor "tax-preparation-compliance" >}}Prepared individual tax returns
-      in a client-facing environment with attention to documentation, accuracy, privacy,
-      and filing requirements.
-      * Tax Preparation & Compliance: Gathered and reviewed client tax documents,
-      clarified missing information, and supported accurate return preparation within
-      established procedures.
-      * Client Service: Explained tax preparation steps in clear language, maintained a
-      professional service experience, and handled sensitive financial information with care.
+      {{< landing_anchor "tax-preparation-compliance" >}}Prepared and filed individual tax 
+      returns in a client-facing environment, ensuring accuracy and compliance with federal 
+      and state regulations.
+      * Tax Preparation & Compliance: Reviewed client financial documents (W-2s, 1099s, 
+      deductions, credits) to determine appropriate filing treatment.
+      * Client Service: Explained tax outcomes and recommendations clearly to clients while 
+      maintaining confidentiality and professionalism.
       * Operational Discipline: Followed seasonal tax office workflows, quality checks,
       and deadline-driven processes during high-volume filing periods.
     icon: receipt-percent
@@ -105,18 +114,17 @@ experience:
   - role: Small Business Owner / Financial Operations
     org: E-Commerce and Hospitality Operations
     summary: |
-      {{< landing_anchor "small-business-financial-operations" >}}Managed practical
-      bookkeeping and operating records for small business activity across sales,
-      inventory, expenses, customers, and vendors.
+      {{< landing_anchor "small-business-financial-operations" >}}Maintained general ledger 
+      records and performed reconciliations across sales platforms and payment systems to ensure accuracy.
       {{< landing_anchor "full-cycle-bookkeeping" >}}
-      * Full-Cycle Bookkeeping: Tracked income, expenses, receipts, and supporting
-      records needed for monthly review and tax preparation.
+      * Supported financial operations for a multi-channel business generating up to $100K annually, with net profit of $10K–$20K.
+      * Full-Cycle Bookkeeping: Managed full-cycle bookkeeping for small business operations, 
+      including tracking revenue, expenses, and supporting documentation for financial reporting and tax preparation.
       {{< landing_anchor "financial-reporting-reconciliation" >}}
-      * Financial Reporting & Reconciliation: Reconciled sales and payment records,
-      reviewed discrepancies, and organized information for reliable financial reporting.
+      * Prepared monthly financial summaries and organized data for profitability analysis and tax reporting.
       {{< landing_anchor "inventory-sales-cost-tracking" >}}
-      * Inventory, Sales & Cost Tracking: Monitored inventory movement, cost inputs,
-      pricing considerations, vendor/customer records, and operating expenses.
+      * Monitored inventory, cost inputs, pricing, and vendor/customer records to support 
+      operational and financial decision-making.
       * Payroll Support: Helped maintain payroll-related records and operational
       documentation where needed for small business administration.
     icon: calculator
@@ -172,11 +180,11 @@ skills:
 
 languages:
   - name: Thai
-    level: 5
     label: Native
   - name: English
-    level: 4
-    label: Professional
+    label: Fluent
+  - name: Mandarin Chinese
+    label: Conversational
 
 awards:
   - title: Full-Cycle Small Business Bookkeeping
@@ -202,6 +210,6 @@ certifications:
   - title: B.A. in Accounting
     featured: true
     date: "In progress - Expected September 2026"
-  - title: Master's degree in Business Administration - International Business
+  - title: Master’s degree in Business Administration – International Business
     featured: true
     date: "Completed"

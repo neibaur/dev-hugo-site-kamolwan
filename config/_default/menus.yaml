@@ -13,13 +13,14 @@ main:
   - name: Education
     url: education/
     weight: 30
-  - name: Projects
-    url: projects/
-    weight: 40
+# Keep Projects if you have content; otherwise comment it out
+  # - name: Projects
+  #   url: projects/
+  #   weight: 40
   - name: Contact
     url: 'mailto:joy@kamolwan.com'
     weight: 50
-# Keep Blog only if you have content; otherwise, comment it out
+# Keep Blog only if you have content; otherwise comment it out
   # - name: Blog
   #   url: '/post/'
   #   weight: 40

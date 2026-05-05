@@ -10,11 +10,6 @@ design:
 
 # Page sections
 sections:
-  - block: markdown
-    content:
-      title: Education Snapshot
-      text: |
-        {{< display_list key="certifications" type="all" header="" >}}
   - block: education
     content:
       username: me
