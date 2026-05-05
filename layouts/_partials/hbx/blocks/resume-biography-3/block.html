@@ -560,11 +560,19 @@
           {{ end }}
           <ul class="space-y-2 list-disc list-inside !ml-7" style="list-style-type: disc; margin-left: 2rem;">
             {{ range $ongoing }}
-            {{ $item := strings.TrimSpace (printf "%v" .) }}
+            {{ $item := "" }}
+            {{ $url := "" }}
+            {{ if reflect.IsMap . }}
+              {{ with index . "text" }}{{ $item = strings.TrimSpace (printf "%v" .) }}{{ end }}
+              {{ with index . "url" }}{{ $url = strings.TrimSpace (printf "%v" .) }}{{ end }}
+            {{ else }}
+              {{ $item = strings.TrimSpace (printf "%v" .) }}
+            {{ end }}
             {{ if $item }}
             {{ $id := $item | lower | replaceRE `\s+` `-` | replaceRE `[^a-z0-9-]` `` }}
+            {{ $href := $url | default (printf "/experience/#%s" $id) | relLangURL }}
             <li>
-              <a href="/experience/#{{ $id }}" class="text-base font-medium text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-sky-300 transition-colors">
+              <a href="{{ $href }}" class="text-base font-medium text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-sky-300 transition-colors">
                 {{ $item | markdownify | emojify }}
               </a>
             </li>

@@ -90,8 +90,9 @@
     {{/* Experience items */}}
     <div class="space-y-8">
       {{ range $idx, $item := $experience }}
+      {{ $item_id := index $item "role" | lower | replaceRE `[.’']` `` | replaceRE `[^a-z0-9]+` `-` | replaceRE `(^-|-$)` `` }}
       {{/* Card wrapper */}}
-      <div class="group relative pl-12 sm:pl-16">
+      <div id="{{ $item_id }}" class="group relative scroll-mt-24 pl-12 sm:pl-16">
 
         {{/* Timeline marker */}}
         <div class="absolute left-0 sm:left-2 top-6 flex items-center justify-center">

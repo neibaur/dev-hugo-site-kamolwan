@@ -55,9 +55,12 @@ interests:
   - Small Business Financial Operations
 
 ongoing:
-  - Completing B.A. in Accounting (Expected September 2026)
-  - Managing and growing KP Deals LLC e-commerce business
-  - Applying bookkeeping, reconciliation, and tax preparation practices in real business operations
+  - text: Completing B.A. in Accounting (Expected September 2026)
+    url: /education/#ba-in-accounting
+  - text: Managing and growing KP Deals LLC e-commerce business
+    url: /experience/#small-business-owner-financial-operations
+  - text: Applying bookkeeping, reconciliation, and tax preparation practices in real business operations
+    url: /experience/#small-business-owner-financial-operations
 
 education:
   - degree: B.A. in Accounting
