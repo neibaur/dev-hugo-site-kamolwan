@@ -16,16 +16,80 @@
   --joy-surface: #f8fafc;
 }
 
-body {
+:not(.dark) body {
   background:
     linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 1))
     var(--joy-surface);
 }
 
-.hbb-section:first-of-type {
+:not(.dark) .hbb-section:first-of-type {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(4, 120, 87, 0.08));
 }
 
 .dark .hbb-section:first-of-type {
   background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(6, 78, 59, 0.38));
+}
+
+/* === Bright/Light Mode Accessibility Contrast Fix === */
+:not(.dark) body {
+  color: #1e293b; /* Slate-800 */
+}
+
+:not(.dark) .prose,
+:not(.dark) .resume-biography-3,
+:not(.dark) .work-experience,
+:not(.dark) .education,
+:not(.dark) .section-subheading,
+:not(.dark) .text-muted,
+:not(.dark) .text-gray-500,
+:not(.dark) .text-gray-600 {
+  color: var(--joy-slate) !important;
+}
+
+:not(.dark) h1,
+:not(.dark) h2,
+:not(.dark) h3,
+:not(.dark) h4,
+:not(.dark) .section-heading h1,
+:not(.dark) .section-heading h2,
+:not(.dark) .article-title a {
+  color: var(--joy-navy) !important;
+}
+
+:not(.dark) .bg-white,
+:not(.dark) .card,
+:not(.dark) .article-style,
+:not(.dark) .home-section {
+  color: #1e293b;
+}
+
+:not(.dark) a {
+  color: #0369a1 !important; /* Sky-700 */
+}
+
+:not(.dark) a:hover {
+  color: #075985 !important; /* Sky-800 */
+}
+
+/* === Education Dark Mode Contrast Fix === */
+.dark .education-timeline {
+  color: #cbd5e1;
+}
+
+.dark .education-card-title {
+  color: #f8fafc;
+}
+
+.dark .education-card-summary,
+.dark .education-card-summary p,
+.dark .education-card-summary li {
+  color: #cbd5e1;
+}
+
+.dark .education-card-institution {
+  color: #7dd3fc;
+}
+
+.dark .education-card-date {
+  color: #94a3b8;
 }

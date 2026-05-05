@@ -71,11 +71,11 @@
   {{ end }}
 {{ end }}
 
-<div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+<div class="education-timeline mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
 
 {{ if gt (len $education) 0 }}
 <div class="w-full">
-  <h2 class="mb-10 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ i18n "education" | default "Education" }}</h2>
+  <h2 class="mb-10 text-3xl font-bold text-gray-900 dark:text-slate-50 text-center">{{ i18n "education" | default "Education" }}</h2>
 
   {{/* Timeline container */}}
   <div class="relative">
@@ -93,7 +93,7 @@
           {{/* Glowing dot */}}
           <div class="relative">
             <div class="absolute inset-0 w-8 h-8 bg-secondary-500/30 rounded-full blur-md group-hover:bg-secondary-500/50 transition-all duration-300"></div>
-            <div class="relative w-8 h-8 bg-white dark:bg-gray-900 border-2 border-secondary-500 rounded-full flex items-center justify-center group-hover:border-secondary-400 group-hover:scale-110 transition-all duration-300">
+            <div class="relative w-8 h-8 bg-white dark:bg-slate-950 border-2 border-secondary-500 rounded-full flex items-center justify-center group-hover:border-secondary-400 group-hover:scale-110 transition-all duration-300">
               {{ if index $item "icon" }}
                 {{ partial "functions/get_icon" (dict "name" (index $item "icon") "attributes" "class='w-4 h-4 text-secondary-600 dark:text-secondary-400'") }}
               {{ else }}
@@ -104,22 +104,22 @@
         </div>
 
         {{/* Content card */}}
-        <div class="relative bg-white dark:bg-white/[0.02] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/[0.06] p-6 hover:bg-gray-50 dark:hover:bg-white/[0.04] hover:border-primary-300 dark:hover:border-primary-500/30 transition-all duration-300 group-hover:translate-x-1 shadow-sm dark:shadow-none">
+        <div class="education-card relative bg-white dark:bg-slate-900/90 backdrop-blur-sm rounded-xl border border-gray-200 dark:border-slate-700 p-6 hover:bg-gray-50 dark:hover:bg-slate-800/90 hover:border-primary-300 dark:hover:border-primary-500/40 transition-all duration-300 group-hover:translate-x-1 shadow-sm dark:shadow-none">
 
           {{/* Header row */}}
           <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
             <div>
               {{/* Degree */}}
-              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+              <h3 class="education-card-title text-xl font-bold text-gray-900 dark:text-slate-50 group-hover:text-primary-600 dark:group-hover:text-sky-300 transition-colors">
                 {{ index $item "degree" }}
               </h3>
               {{/* Institution */}}
-              <p class="text-primary-600 dark:text-primary-400 font-medium mt-1">
+              <p class="education-card-institution text-primary-600 dark:text-sky-300 font-medium mt-1">
                 {{ index $item "institution" }}
               </p>
             </div>
             {{/* Date */}}
-            <div class="flex-shrink-0 text-sm text-gray-500 dark:text-gray-400 font-medium">
+            <div class="education-card-date flex-shrink-0 text-sm text-gray-500 dark:text-slate-400 font-medium">
               {{ if index $item "start" }}
                 {{ (index $item "start") | time.Format $date_format }}
                 {{ if index $item "end" }}
@@ -133,7 +133,7 @@
 
           {{/* Summary */}}
           {{ if index $item "summary" }}
-          <div class="prose prose-slate dark:prose-invert max-w-none mb-4">
+          <div class="education-card-summary prose prose-slate dark:prose-invert prose-p:text-gray-700 dark:prose-p:text-slate-300 prose-li:text-gray-700 dark:prose-li:text-slate-300 prose-strong:text-gray-900 dark:prose-strong:text-slate-50 max-w-none mb-4">
             {{ (index $item "summary") | $page.RenderString | emojify }}
           </div>
           {{ end }}
