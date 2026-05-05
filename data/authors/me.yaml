@@ -187,23 +187,17 @@ languages:
     label: Conversational
 
 awards:
-  - title: Full-Cycle Small Business Bookkeeping
+  - title: Managed full-cycle bookkeeping for a multi-channel business generating up to $100K annually
     featured: true
-    awarder: Professional Experience
-    date: "2026"
-    summary: Hands-on experience tracking sales, inventory, expenses, vendor/customer records, and reconciliation needs for small business operations.
     icon: calculator
-  - title: Client-Facing Tax Preparation
+  - title: Prepared and filed individual tax returns in a client-facing, compliance-focused environment
     featured: true
-    awarder: H&R Block
-    date: "2020"
-    summary: Prepared tax returns in a deadline-driven service environment with attention to documentation, privacy, and procedural quality.
     icon: receipt-percent
-  - title: Compliance-Focused Customer Service
+  - title: Maintained general ledger, performed reconciliations, and supported financial reporting
     featured: true
-    awarder: Airline Operations
-    date: "2011"
-    summary: Built strong habits in regulated operations, safety procedures, professional communication, and reliable customer support.
+    icon: clipboard-document-check
+  - title: Built strong client service and operational discipline in regulated environments
+    featured: true
     icon: shield-check
 
 certifications:
