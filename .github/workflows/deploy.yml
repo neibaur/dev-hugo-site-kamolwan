@@ -44,7 +44,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           personal_token: ${{ secrets.GH_PAT }}
-          external_repository: kamolwan/kamolwan.github.io
+          external_repository: neibaur/kamolwan.github.io
           publish_branch: main
           publish_dir: ./public
           cname: kamolwan.com
