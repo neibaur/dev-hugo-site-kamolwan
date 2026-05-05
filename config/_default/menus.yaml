@@ -17,7 +17,7 @@ main:
     url: projects/
     weight: 40
   - name: Contact
-    url: 'mailto:hello@isaacneibaur.com'
+    url: 'mailto:joy@kamolwan.com'
     weight: 50
 # Keep Blog only if you have content; otherwise, comment it out
   # - name: Blog

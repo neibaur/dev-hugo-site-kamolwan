@@ -2,219 +2,201 @@ schema: hugoblox/author/v1
 slug: me
 is_owner: true
 name:
-  display: Isaac Neibaur
-  given: Isaac
-  family: Neibaur
-  alternate: ''  # Example: 王伟
-  pronunciation: ''  # Example: Wáng Wěi
-  pronouns: he/him
-  
+  display: Kamolwan (Joy) Paramee
+  given: Kamolwan
+  family: Paramee
+  alternate: Joy
+  pronunciation: ''
+  pronouns: she/her
+
 postnominals:
   - Master's
 status:
-  icon: "🌱"
+  icon: "hero/calculator"
 role: |
-  {{< sidebar_title 
-      title="Senior Business Intelligence Engineer" 
-      subtitle="specializing in Data Engineering, Automation, and Enterprise Analytics" >}}
-  
-  {{< sidebar_button 
-      text="Download CV / Resume" 
-      url="/uploads/Isaac_Neibaur_resume.pdf" 
-      icon="📄" >}}
+  {{< sidebar_title
+      title="Accounting & Finance Professional"
+      subtitle="Bookkeeping, Tax Preparation, and Small Business Financial Operations" >}}
+
+  {{< sidebar_button
+      text="Download Resume"
+      url="/uploads/resume.pdf"
+      icon="PDF" >}}
 bio: |
-  I specialize in transforming complex data ecosystems into clear, actionable business strategy. 
-  With a foundation in agricultural biotechnology and a transition into software engineering, 
-  I bring a unique blend of scientific rigor and scalable technology expertise. I design and deliver enterprise BI solutions, 
-  data pipelines, and automation frameworks that enable leaders to make faster, data-driven decisions.
+  I am an accounting and finance professional with hands-on experience in full-cycle
+  bookkeeping, tax preparation, financial reporting, reconciliation, inventory accounting,
+  payroll support, and small business financial operations.
+
+  My background combines a Master's degree in Business Administration with an International
+  Business focus, more than five years of practical bookkeeping and tax preparation work,
+  and current B.A. in Accounting coursework expected to be completed in September 2026.
+  I bring careful recordkeeping, client service, and operational discipline to accounting,
+  bookkeeping, tax preparation, accounting internship, and junior accountant opportunities.
 
 affiliations:
-  - name: General Motors
-    url: /experience/#general-motors
-  - name: Cabrillo Coastal General Insurance Agency
-    url: /experience/#cabrillo-coastal
-  - name: Pioneer Hi-Bred
-    url: /experience/#pioneer
+  - name: H&R Block
+    url: /experience/#tax-preparation-compliance
+  - name: Small Business Financial Operations
+    url: /experience/#small-business-financial-operations
+  - name: Accounting Studies
+    url: /education/
 
 links:
   - icon: at-symbol
-    url: mailto:hello@isaacneibaur.com
+    url: mailto:joy@kamolwan.com
     label: E-mail Me
-  - icon: brands/github
-    url: https://github.com/neibaur
-    label: GitHub
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/isaacneibaur
-    label: LinkedIn
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?view_op=list_works&hl=en&user=wAn0LMQAAAAJ
-    label: Google Scholar
-  - icon: custom/microsoft
-    url: https://learn.microsoft.com/en-us/users/isaacneibaur
-    label: Microsoft Learn
-  - icon: C
-    url: https://www.credly.com/users/isaacneibaur
-    label: Credly
 
 interests:
-  - Enterprise Data Strategy
-  - Data Lifecycle Management
-  - Operational Excellence & DataOps
-  - Cloud Ecosystems (Azure)
-  - Executive Decision Support
+  - Full-Cycle Bookkeeping
+  - Tax Preparation & Compliance
+  - Financial Reporting & Reconciliation
+  - Small Business Financial Operations
+  - Inventory, Sales & Cost Tracking
+  - Client Service & Operational Excellence
 
 ongoing:
-  - Microsoft Fabric (DP-600 / DP-700)
-  - Cost optimization strategies in Databricks workflows
-  - Slack + Python automation integrations
+  - B.A. in Accounting coursework, expected September 2026
+  - U.S. tax preparation and compliance practice
+  - Bookkeeping, reconciliation, and financial reporting workflows
 
 education:
-  - degree: BS Computer Science
-    institution: Oregon State University
-    start: 2016-01-04
-    end: 2019-12-13
-  - degree: MS Agronomy (Plant Biotechnology)
-    institution: University of Florida
-    start: 2005-08-24
-    end: 2007-08-14
+  - degree: B.A. in Accounting
+    institution: Current accounting degree program
+    end: 2026-09-30
     summary: |
-      Focused on early, novel transgenic successes in salt-resistant turfgrass.
-    button:
-      text: Download Dissertation
-      url: /uploads/Isaac_Neibaur_Master_Thesis.pdf
-      icon: hero/arrow-down-tray
-  - degree: BS Botany
-    institution: University of Florida
-    start: 1998-08-20
-    end: 2003-12-20
-  - degree: BA East Asian Languages and Literatures (Mandarin)
-    institution: University of Florida
-    start: 1998-08-20
-    end: 2003-12-20
+      Expected completion: September 2026. Coursework supports entry-level accounting,
+      bookkeeping, tax preparation, and junior accountant roles.
+    icon: academic-cap
+  - degree: Master's degree in Business Administration - International Business
+    institution: Business Administration graduate program
+    summary: |
+      Graduate study focused on international business, business operations, and
+      cross-cultural commercial context. Degree title is intentionally stated without
+      using "MBA" unless supported by the official transcript wording.
+    icon: academic-cap
 
 experience:
-  - role: Software Engineer (Operations & Reliability)
-    org: General Motors
-    start: 2021-02-01
-    end: 2025-12-31
+  - role: Tax Preparer
+    org: H&R Block
     summary: |
-      {{< landing_anchor "gm" >}}Served as an analytical bridge between operations,
-      data engineering, and leadership stakeholders, translating Oracle and Azure Databricks
-      data into reporting workflows for operational decisions.
-      {{< landing_anchor "enterprise-data-strategy" >}}
-      * Enterprise Data Strategy: Supported design and validation of star-schema semantic
-      models during migration from Oracle reporting sources toward Medallion Architecture
-      patterns in Azure Databricks.
-      {{< landing_anchor "operational-excellence-dataops" >}}
-      * Operational Excellence & DataOps: Maintained high-availability reporting workflows
-      for business-critical data pipelines using GitHub Actions and Azure Databricks.
-      {{< landing_anchor "executive-decision-support" >}}
-      * Executive Decision Support: Tuned SQL and reporting logic to improve performance,
-      including typical report-load reductions near 15% and one Oracle-connected paginated
-      report improvement near 90% through threaded processing.
-      * Leadership & Culture: Served as Asian Community Lead and DEI Lead, coordinating
-      professional development and representation-focused programming for a 500+ member
-      employee community.
-      * Technical Mentorship: Led a two-year security-focused study group using PortSwigger
-      labs and encouraged team participation in company hackathons and debate events.
-    #   text: View Project
-    #   url: /project/gm-analytics/
+      {{< landing_anchor "tax-preparation-compliance" >}}Prepared individual tax returns
+      in a client-facing environment with attention to documentation, accuracy, privacy,
+      and filing requirements.
+      * Tax Preparation & Compliance: Gathered and reviewed client tax documents,
+      clarified missing information, and supported accurate return preparation within
+      established procedures.
+      * Client Service: Explained tax preparation steps in clear language, maintained a
+      professional service experience, and handled sensitive financial information with care.
+      * Operational Discipline: Followed seasonal tax office workflows, quality checks,
+      and deadline-driven processes during high-volume filing periods.
+    icon: receipt-percent
+    tags:
+      - Tax Preparation
+      - Client Documentation
+      - Compliance
+      - Customer Service
 
-  - role: Systems Analyst
-    org: Cabrillo Coastal General Insurance Agency
-    start: 2016-06-01
-    end: 2021-01-31
+  - role: Small Business Owner / Financial Operations
+    org: E-Commerce and Hospitality Operations
     summary: |
-      {{< landing_anchor "cabrillo-coastal" >}}Collaborated with executive leadership to 
-      build dashboards and reports that made call-volume and client-service metrics easier
-      to monitor and act on.
-      {{< landing_anchor "cloud-ecosystems-azure" >}}
-      * Cloud Ecosystems: Managed the company's comparative rater API and independently
-      developed Python and Selenium automation to simulate and validate quote-binding
-      workflows, improving testing coverage for client-facing systems.
-      {{< landing_anchor "data-lifecycle-management" >}}
-      * Data Lifecycle Management: Streamlined the reporting path from raw phone-tree logs
-      to leadership dashboards, improving the usability of operational call analytics.
-  - role: Senior Research Associate
-    org: Pioneer Hi-Bred (Beijing, China)
-    start: 2013-06-01
-    end: 2015-06-30
-    summary: | 
-      {{< landing_anchor "pioneer" >}}Acted as a technical liaison between the US corporate
-      office and research sites in China and Australia, supporting consistent lab operations
-      across distributed teams.
-      * Deployed automated labeling and tracking workflows that reduced reliance on
-      hand-written laboratory methods and improved traceability.
+      {{< landing_anchor "small-business-financial-operations" >}}Managed practical
+      bookkeeping and operating records for small business activity across sales,
+      inventory, expenses, customers, and vendors.
+      {{< landing_anchor "full-cycle-bookkeeping" >}}
+      * Full-Cycle Bookkeeping: Tracked income, expenses, receipts, and supporting
+      records needed for monthly review and tax preparation.
+      {{< landing_anchor "financial-reporting-reconciliation" >}}
+      * Financial Reporting & Reconciliation: Reconciled sales and payment records,
+      reviewed discrepancies, and organized information for reliable financial reporting.
+      {{< landing_anchor "inventory-sales-cost-tracking" >}}
+      * Inventory, Sales & Cost Tracking: Monitored inventory movement, cost inputs,
+      pricing considerations, vendor/customer records, and operating expenses.
+      * Payroll Support: Helped maintain payroll-related records and operational
+      documentation where needed for small business administration.
+    icon: calculator
+    tags:
+      - Bookkeeping
+      - Reconciliation
+      - Inventory Accounting
+      - Expense Tracking
+
+  - role: Flight Attendant
+    org: Airline Operations
+    summary: |
+      {{< landing_anchor "client-service-operational-excellence" >}}Delivered
+      safety-focused customer service in a regulated, time-sensitive operating environment.
+      * Compliance & Safety: Followed standard procedures, safety protocols, and
+      documentation expectations while supporting passengers and crew.
+      * Communication: Managed customer questions and service issues with calm,
+      professional communication across diverse travel situations.
+      * Operational Reliability: Supported punctual, team-based operations where
+      preparation, accuracy, and consistency mattered every day.
+    icon: shield-check
+    tags:
+      - Compliance
+      - Customer Service
+      - Communication
+      - Operational Reliability
 
 skills:
-  - name: Technical Skills
+  - name: Accounting & Bookkeeping
     items:
-      - label: Python Automation
+      - label: Full-Cycle Bookkeeping
         level: 5
-      - label: Power BI (DAX/M)
-        level: 5
-      - label: Azure Databricks
+      - label: Account Reconciliation
         level: 4
-  - name: Data Architecture & Governance
+      - label: Financial Reporting Support
+        level: 4
+  - name: Tax & Business Operations
     items:
-      - label: Stakeholder Management
-        level: 5
-      - label: Conference Presentations
+      - label: Tax Preparation
         level: 4
-      - label: Technical Documentation
+      - label: Inventory and Sales Tracking
+        level: 4
+      - label: Payroll Record Support
+        level: 3
+  - name: Professional Strengths
+    items:
+      - label: Client Service
+        level: 5
+      - label: Documentation and Recordkeeping
+        level: 5
+      - label: Compliance-Focused Operations
         level: 4
 
 languages:
-  - name: English
+  - name: Thai
     level: 5
     label: Native
-  - name: Mandarin Chinese
+  - name: English
     level: 4
-    label: Fluent
-  - name: Spanish
-    level: 2
-    label: Basic
-    
+    label: Professional
 
 awards:
-  - title: Hackathon team winner 
+  - title: Full-Cycle Small Business Bookkeeping
     featured: true
-    rank: 1st Place
-    awarder: General Motors Geek Week
-    date: "2022-11-01"
-    summary: Team awarded for presenting a working demo of an interactive map for a manufacturing location.
-    icon: hero/trophy
-  - title: Debate team winner
+    awarder: Professional Experience
+    date: "2026"
+    summary: Hands-on experience tracking sales, inventory, expenses, vendor/customer records, and reconciliation needs for small business operations.
+    icon: calculator
+  - title: Client-Facing Tax Preparation
     featured: true
-    rank: 1st Place
-    awarder: General Motors Geek Week
-    date: "2024-06-01"
-    summary: Team awarded for winning debate on why autonomous vehicles are the superior next technology.
-    icon: hero/trophy
-  - title: Secure Code Warrior Champion
-    featured: false
-    awarder: General Motor's JEDI (Joint Educational Defense Initiative)
-    date: "2024-05-01"
-    summary: Placed in the top three over 50+ competitors from various roles at GM.
-    icon: hero/trophy
-  - title: Geek Week overall annual winner!
-    featured: false
-    awarder: General Motors Geek Week
-    date: "2022"
-    summary: Awarded third place over company-wide competition by earning a high sum of Geek Week points by the end of the year.
-    icon: hero/trophy
-  - title: Geek Week overall annual winner!
+    awarder: H&R Block
+    date: "2026"
+    summary: Prepared tax returns in a deadline-driven service environment with attention to documentation, privacy, and procedural quality.
+    icon: receipt-percent
+  - title: Compliance-Focused Customer Service
     featured: true
-    rank: 2nd Place
-    awarder: General Motors Geek Week
-    date: "2024"
-    summary: Awarded second place over company wide competition by earning a high sum of Geek Week points by the end of the year.
-    icon: hero/trophy
+    awarder: Airline Operations
+    date: "2026"
+    summary: Built strong habits in regulated operations, safety procedures, professional communication, and reliable customer support.
+    icon: shield-check
 
 certifications:
-  - title: "Microsoft Certified: Power BI Data Analyst Associate"
+  - title: B.A. in Accounting
     featured: true
-    id: "PL-300"
-    url: "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/"
-    verify_url: "https://learn.microsoft.com/api/credentials/share/en-us/IsaacNeibaur/EEAD2C1408383F"
-    date: "Dec 2025"
+    id: "Expected Sep 2026"
+    date: "In progress"
+  - title: Master's degree in Business Administration - International Business
+    featured: true
+    date: "Completed"

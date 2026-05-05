@@ -8,3 +8,24 @@
 .wide-block .max-w-prose {
   max-width: 85ch; /* Approximately 30% wider than default prose width (65ch) */
 }
+
+:root {
+  --joy-navy: #0f172a;
+  --joy-slate: #334155;
+  --joy-emerald: #047857;
+  --joy-surface: #f8fafc;
+}
+
+body {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 1))
+    var(--joy-surface);
+}
+
+.hbb-section:first-of-type {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(4, 120, 87, 0.08));
+}
+
+.dark .hbb-section:first-of-type {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(6, 78, 59, 0.38));
+}

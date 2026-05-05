@@ -12,7 +12,7 @@ sections:
   - block: collection
     content:
       title: Selected Projects
-      text: A focused collection of recent portfolio projects and in-progress case studies demonstrating data engineering, dashboard development, automation, and cloud-integrated analytics. In-progress projects are included when they show real implementation progress.
+      text: A focused collection of practical accounting, bookkeeping, tax preparation, and small business financial operations case studies. In-progress examples are included when they show concrete recordkeeping or reporting practice.
       filters:
         folders:
           - projects

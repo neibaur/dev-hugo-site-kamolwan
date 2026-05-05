@@ -12,7 +12,7 @@ design:
 sections:
   - block: markdown
     content:
-      title: 🎓 Certifications
+      title: Education Snapshot
       text: |
         {{< display_list key="certifications" type="all" header="" >}}
   - block: education

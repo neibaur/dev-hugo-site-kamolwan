@@ -1,8 +1,8 @@
-# Isaac Neibaur Portfolio
+# Kamolwan (Joy) Paramee Portfolio
 
-Source for [isaacneibaur.com](https://isaacneibaur.com), a Hugo Blox portfolio focused on business intelligence, data engineering, automation, and technical leadership.
+Source for [kamolwan.com](https://kamolwan.com), a Hugo Blox portfolio focused on accounting, bookkeeping, tax preparation, reconciliation, reporting, and small business financial operations.
 
-This repository builds the development source site. Production is published by GitHub Actions to [`neibaur/github.io`](https://github.com/neibaur/github.io), which serves `isaacneibaur.com`.
+This repository builds the development source site. Production is published by GitHub Actions to `kamolwan/kamolwan.github.io`, which serves `kamolwan.com`.
 
 ## Tech Stack
 
@@ -49,12 +49,12 @@ hugo --gc --minify --cacheDir "$PWD\.hugo-cache"
   - `content/projects/`: Portfolio project pages.
   - `content/publications/`: Publication pages, if used.
   - `content/events/`: Talk/event pages, if used.
-- `data/authors/me.yaml`: Primary profile, biography, education, experience, skills, awards, and certifications.
+- `data/authors/me.yaml`: Primary profile, biography, education, experience, skills, highlights, and certifications.
 - `layouts/shortcodes/`: Custom local shortcodes used by portfolio content.
 - `layouts/_partials/`: Local Hugo Blox partial overrides.
 - `assets/css/custom.css`: Local CSS customizations.
 - `assets/media/authors/me.png`: Profile image.
-- `static/uploads/`: Resume, thesis, and other downloadable public files.
+- `static/uploads/`: Resume and other downloadable public files.
 - `_drafts/`: Starter/template content kept out of the production Hugo content tree.
 
 ## Content Notes
@@ -65,4 +65,4 @@ Avoid committing generated output such as `public/`, `resources/`, `.hugo_build.
 
 ## Deployment
 
-Pushing deployable work to `main` triggers GitHub Actions. The deploy workflow builds this Hugo site, publishes the generated `public/` output to [`neibaur/github.io`](https://github.com/neibaur/github.io), and updates [isaacneibaur.com](https://isaacneibaur.com).
+Pushing deployable work to `main` triggers GitHub Actions. The deploy workflow builds this Hugo site, publishes the generated `public/` output to `kamolwan/kamolwan.github.io`, and updates [kamolwan.com](https://kamolwan.com).

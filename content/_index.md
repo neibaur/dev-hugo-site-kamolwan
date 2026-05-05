@@ -24,7 +24,7 @@ sections:
         about: 'Professional Summary'
         education: ''
         interests: ''
-        ongoing: "What I'm Working On"
+        ongoing: "Current Focus"
     design:
       # Use the new Gradient Mesh which automatically adapts to the selected theme colors
       background:
@@ -45,8 +45,8 @@ sections:
       title: ''
       text: |
         {{< bio_grid >}}
-          {{< display_list key="certifications" type="featured" header="🎓 Core Certifications" >}}
-          {{< display_list key="awards" type="featured" header="🏆 Notable Awards" >}}
+          {{< display_list key="certifications" type="featured" header="Education Snapshot" >}}
+          {{< display_list key="awards" type="featured" header="Professional Highlights" >}}
         {{< /bio_grid >}}
     design:
       columns: 2

@@ -16,23 +16,23 @@ sections:
       username: me
   - block: tech-stack
     content:
-      title: Tech Stack
+      title: Accounting Focus Areas
       categories:
-        - name: Data Engineering
+        - name: Bookkeeping & Reporting
           items:
-            - name: "🐍 Python"
-            - name: "🗄️ SQL"
-            - name: "🌐 REST APIs"
-        - name: Business Intelligence
+            - name: "Full-Cycle Bookkeeping"
+            - name: "Account Reconciliation"
+            - name: "Financial Reporting Support"
+        - name: Tax & Compliance
           items:
-            - name: "📊 Power BI (DAX/M)"
-            - name: "⭐ Star Schema Modeling"
-            - name: "🤖 Automated Reporting"
-        - name: DevOps & Platforms
+            - name: "Tax Preparation"
+            - name: "Client Documentation"
+            - name: "Privacy-Focused Records"
+        - name: Business Operations
           items:
-            - name: "☁️ Azure Databricks"
-            - name: "⚙️ GitHub Actions"
-            - name: "🧵 Microsoft Fabric"
+            - name: "Inventory and Sales Tracking"
+            - name: "Expense and Cost Tracking"
+            - name: "Vendor and Customer Records"
   - block: work-experience
     content:
       username: me
@@ -41,6 +41,6 @@ sections:
       date_format: 'January 2006'
   - block: resume-awards
     content:
-      title: Awards
+      title: Professional Highlights
       username: me
 ---

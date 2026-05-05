@@ -1,10 +1,5 @@
-# ⚠️ GENERATED REPOSITORY - DO NOT EDIT MANUALLY
+# Static Assets
 
-This repository ([neibaur.github.io](//https://github.com/neibaur/github.io)) is the **Production Build** of my personal portfolio. 
+Files in this directory are copied directly into the generated Hugo site.
 
-### How this site is updated:
-1. All development happens in the [dev-hugo-site](https://github.com/neibaur/dev-hugo-site) repository.
-2. When code is pushed to the `main` branch of that repo, a **GitHub Action** triggers a build.
-3. The built HTML/CSS files are then pushed here, overwriting this repository.
-
-**Looking for the source code?** Visit the [dev-hugo-site](https://github.com/neibaur/dev-hugo-site) repository.
+Use `static/uploads/` for public resume files and other downloadable assets. Do not place generated build output, private documents, secrets, or outdated legacy portfolio files here.
