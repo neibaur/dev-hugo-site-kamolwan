@@ -1,0 +1,10 @@
+/* Custom CSS overrides for Hugo Blox */
+.hbb-section {
+  padding-top: var(--hb-spacing-section, 6rem);
+  padding-bottom: var(--hb-spacing-section, 6rem);
+}
+
+/* Wide block styling for certifications section */
+.wide-block .max-w-prose {
+  max-width: 85ch; /* Approximately 30% wider than default prose width (65ch) */
+}

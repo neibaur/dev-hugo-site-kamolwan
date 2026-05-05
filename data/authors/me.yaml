@@ -1,0 +1,220 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+name:
+  display: Isaac Neibaur
+  given: Isaac
+  family: Neibaur
+  alternate: ''  # Example: 王伟
+  pronunciation: ''  # Example: Wáng Wěi
+  pronouns: he/him
+  
+postnominals:
+  - Master's
+status:
+  icon: "🌱"
+role: |
+  {{< sidebar_title 
+      title="Senior Business Intelligence Engineer" 
+      subtitle="specializing in Data Engineering, Automation, and Enterprise Analytics" >}}
+  
+  {{< sidebar_button 
+      text="Download CV / Resume" 
+      url="/uploads/Isaac_Neibaur_resume.pdf" 
+      icon="📄" >}}
+bio: |
+  I specialize in transforming complex data ecosystems into clear, actionable business strategy. 
+  With a foundation in agricultural biotechnology and a transition into software engineering, 
+  I bring a unique blend of scientific rigor and scalable technology expertise. I design and deliver enterprise BI solutions, 
+  data pipelines, and automation frameworks that enable leaders to make faster, data-driven decisions.
+
+affiliations:
+  - name: General Motors
+    url: /experience/#general-motors
+  - name: Cabrillo Coastal General Insurance Agency
+    url: /experience/#cabrillo-coastal
+  - name: Pioneer Hi-Bred
+    url: /experience/#pioneer
+
+links:
+  - icon: at-symbol
+    url: mailto:hello@isaacneibaur.com
+    label: E-mail Me
+  - icon: brands/github
+    url: https://github.com/neibaur
+    label: GitHub
+  - icon: brands/linkedin
+    url: https://www.linkedin.com/in/isaacneibaur
+    label: LinkedIn
+  - icon: academicons/google-scholar
+    url: https://scholar.google.com/citations?view_op=list_works&hl=en&user=wAn0LMQAAAAJ
+    label: Google Scholar
+  - icon: custom/microsoft
+    url: https://learn.microsoft.com/en-us/users/isaacneibaur
+    label: Microsoft Learn
+  - icon: C
+    url: https://www.credly.com/users/isaacneibaur
+    label: Credly
+
+interests:
+  - Enterprise Data Strategy
+  - Data Lifecycle Management
+  - Operational Excellence & DataOps
+  - Cloud Ecosystems (Azure)
+  - Executive Decision Support
+
+ongoing:
+  - Microsoft Fabric (DP-600 / DP-700)
+  - Cost optimization strategies in Databricks workflows
+  - Slack + Python automation integrations
+
+education:
+  - degree: BS Computer Science
+    institution: Oregon State University
+    start: 2016-01-04
+    end: 2019-12-13
+  - degree: MS Agronomy (Plant Biotechnology)
+    institution: University of Florida
+    start: 2005-08-24
+    end: 2007-08-14
+    summary: |
+      Focused on early, novel transgenic successes in salt-resistant turfgrass.
+    button:
+      text: Download Dissertation
+      url: /uploads/Isaac_Neibaur_Master_Thesis.pdf
+      icon: hero/arrow-down-tray
+  - degree: BS Botany
+    institution: University of Florida
+    start: 1998-08-20
+    end: 2003-12-20
+  - degree: BA East Asian Languages and Literatures (Mandarin)
+    institution: University of Florida
+    start: 1998-08-20
+    end: 2003-12-20
+
+experience:
+  - role: Software Engineer (Operations & Reliability)
+    org: General Motors
+    start: 2021-02-01
+    end: 2025-12-31
+    summary: |
+      {{< landing_anchor "gm" >}}Served as an analytical bridge between operations,
+      data engineering, and leadership stakeholders, translating Oracle and Azure Databricks
+      data into reporting workflows for operational decisions.
+      {{< landing_anchor "enterprise-data-strategy" >}}
+      * Enterprise Data Strategy: Supported design and validation of star-schema semantic
+      models during migration from Oracle reporting sources toward Medallion Architecture
+      patterns in Azure Databricks.
+      {{< landing_anchor "operational-excellence-dataops" >}}
+      * Operational Excellence & DataOps: Maintained high-availability reporting workflows
+      for business-critical data pipelines using GitHub Actions and Azure Databricks.
+      {{< landing_anchor "executive-decision-support" >}}
+      * Executive Decision Support: Tuned SQL and reporting logic to improve performance,
+      including typical report-load reductions near 15% and one Oracle-connected paginated
+      report improvement near 90% through threaded processing.
+      * Leadership & Culture: Served as Asian Community Lead and DEI Lead, coordinating
+      professional development and representation-focused programming for a 500+ member
+      employee community.
+      * Technical Mentorship: Led a two-year security-focused study group using PortSwigger
+      labs and encouraged team participation in company hackathons and debate events.
+    #   text: View Project
+    #   url: /project/gm-analytics/
+
+  - role: Systems Analyst
+    org: Cabrillo Coastal General Insurance Agency
+    start: 2016-06-01
+    end: 2021-01-31
+    summary: |
+      {{< landing_anchor "cabrillo-coastal" >}}Collaborated with executive leadership to 
+      build dashboards and reports that made call-volume and client-service metrics easier
+      to monitor and act on.
+      {{< landing_anchor "cloud-ecosystems-azure" >}}
+      * Cloud Ecosystems: Managed the company's comparative rater API and independently
+      developed Python and Selenium automation to simulate and validate quote-binding
+      workflows, improving testing coverage for client-facing systems.
+      {{< landing_anchor "data-lifecycle-management" >}}
+      * Data Lifecycle Management: Streamlined the reporting path from raw phone-tree logs
+      to leadership dashboards, improving the usability of operational call analytics.
+  - role: Senior Research Associate
+    org: Pioneer Hi-Bred (Beijing, China)
+    start: 2013-06-01
+    end: 2015-06-30
+    summary: | 
+      {{< landing_anchor "pioneer" >}}Acted as a technical liaison between the US corporate
+      office and research sites in China and Australia, supporting consistent lab operations
+      across distributed teams.
+      * Deployed automated labeling and tracking workflows that reduced reliance on
+      hand-written laboratory methods and improved traceability.
+
+skills:
+  - name: Technical Skills
+    items:
+      - label: Python Automation
+        level: 5
+      - label: Power BI (DAX/M)
+        level: 5
+      - label: Azure Databricks
+        level: 4
+  - name: Data Architecture & Governance
+    items:
+      - label: Stakeholder Management
+        level: 5
+      - label: Conference Presentations
+        level: 4
+      - label: Technical Documentation
+        level: 4
+
+languages:
+  - name: English
+    level: 5
+    label: Native
+  - name: Mandarin Chinese
+    level: 4
+    label: Fluent
+  - name: Spanish
+    level: 2
+    label: Basic
+    
+
+awards:
+  - title: Hackathon team winner 
+    featured: true
+    rank: 1st Place
+    awarder: General Motors Geek Week
+    date: "2022-11-01"
+    summary: Team awarded for presenting a working demo of an interactive map for a manufacturing location.
+    icon: hero/trophy
+  - title: Debate team winner
+    featured: true
+    rank: 1st Place
+    awarder: General Motors Geek Week
+    date: "2024-06-01"
+    summary: Team awarded for winning debate on why autonomous vehicles are the superior next technology.
+    icon: hero/trophy
+  - title: Secure Code Warrior Champion
+    featured: false
+    awarder: General Motor's JEDI (Joint Educational Defense Initiative)
+    date: "2024-05-01"
+    summary: Placed in the top three over 50+ competitors from various roles at GM.
+    icon: hero/trophy
+  - title: Geek Week overall annual winner!
+    featured: false
+    awarder: General Motors Geek Week
+    date: "2022"
+    summary: Awarded third place over company-wide competition by earning a high sum of Geek Week points by the end of the year.
+    icon: hero/trophy
+  - title: Geek Week overall annual winner!
+    featured: true
+    rank: 2nd Place
+    awarder: General Motors Geek Week
+    date: "2024"
+    summary: Awarded second place over company wide competition by earning a high sum of Geek Week points by the end of the year.
+    icon: hero/trophy
+
+certifications:
+  - title: "Microsoft Certified: Power BI Data Analyst Associate"
+    featured: true
+    id: "PL-300"
+    url: "https://learn.microsoft.com/en-us/credentials/certifications/data-analyst-associate/"
+    verify_url: "https://learn.microsoft.com/api/credentials/share/en-us/IsaacNeibaur/EEAD2C1408383F"
+    date: "Dec 2025"

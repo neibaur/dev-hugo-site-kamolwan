@@ -1,0 +1,30 @@
+public/
+resources/
+.hugo-cache/
+node_modules/
+themes/
+_vendor/
+_drafts/
+
+# Hugo templates use Go template syntax that Prettier's HTML parser cannot parse.
+layouts/
+
+# Keep Phase 2 away from workflow/editor rewrites.
+.github/
+.devcontainer/
+.vscode/
+
+# Avoid broad rewrites of existing site content/config in this tooling phase.
+assets/
+config/
+content/
+data/
+static/
+HUGO_GUIDE.md
+LICENSE.md
+hugoblox.yaml
+.gitleaks.toml
+
+.hugo_build.lock
+hugo_stats.json
+package-lock.json

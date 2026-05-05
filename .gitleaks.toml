@@ -1,0 +1,15 @@
+title = "Gitleaks configuration"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Generated, vendored, and local build output"
+paths = [
+  '''(^|/)public/''',
+  '''(^|/)resources/''',
+  '''(^|/)node_modules/''',
+  '''(^|/)\.hugo-cache/''',
+  '''(^|/)themes/''',
+  '''(^|/)_vendor/''',
+]

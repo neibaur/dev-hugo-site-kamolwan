@@ -1,0 +1,28 @@
+{
+  "name": "hugo-blox-academic-cv-starter",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@10.14.0",
+  "description": "Academic CV starter template for Hugo Blox with Tailwind CSS v4",
+  "scripts": {
+    "preinstall": "node -e \"const ua=process.env.npm_config_user_agent||''; if(!ua.startsWith('pnpm/')) { console.error('Use pnpm to install dependencies.'); process.exit(1); }\"",
+    "dev": "hugo server --disableFastRender",
+    "build": "hugo --gc --minify",
+    "pagefind": "pagefind --site public",
+    "check:format": "prettier --check .",
+    "format": "prettier --write .",
+    "check:markdown": "markdownlint-cli2 \"content/**/*.md\" \"README.md\" \"AGENTS.md\"",
+    "validate": "pnpm check:format && pnpm check:markdown && pnpm build"
+  },
+  "dependencies": {
+    "pagefind": "^1.4.0",
+    "preact": "^10.27.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.2.1",
+    "@tailwindcss/typography": "^0.5.19",
+    "markdownlint-cli2": "^0.18.1",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^4.2.1"
+  }
+}

@@ -1,0 +1,86 @@
+{{/* Hugo Blox: Custom Tech Stack */}}
+{{/* New block for a three-column tech stack section */}}
+
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $title := "" }}
+{{ $title_raw := index $content "title" }}
+{{ if $title_raw }}{{ $title = strings.TrimSpace (printf "%v" $title_raw) }}{{ end }}
+
+{{ $categories_raw := index $content "categories" }}
+{{ $categories_iter := slice }}
+{{ if reflect.IsSlice $categories_raw }}
+  {{ $categories_iter = $categories_raw }}
+{{ else if and $categories_raw (reflect.IsMap $categories_raw) }}
+  {{ $categories_iter = slice $categories_raw }}
+{{ end }}
+
+{{ $categories := slice }}
+{{ if gt (len $categories_iter) 0 }}
+  {{ range $categories_iter }}
+    {{ if reflect.IsMap . }}
+      {{ $cat_name := "" }}
+      {{ with index . "name" }}{{ $cat_name = strings.TrimSpace (printf "%v" .) }}{{ end }}
+      {{ $items_raw := index . "items" }}
+      {{ $items_iter := slice }}
+      {{ if reflect.IsSlice $items_raw }}
+        {{ $items_iter = $items_raw }}
+      {{ else if and $items_raw (reflect.IsMap $items_raw) }}
+        {{ $items_iter = slice $items_raw }}
+      {{ end }}
+      {{ $items := slice }}
+      {{ if gt (len $items_iter) 0 }}
+        {{ range $items_iter }}
+          {{ if reflect.IsMap . }}
+            {{ $item_name := "" }}
+            {{ with index . "name" }}{{ $item_name = strings.TrimSpace (printf "%v" .) }}{{ end }}
+            {{ if $item_name }}
+              {{ $items = $items | append (dict "name" $item_name) }}
+            {{ end }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+      {{ if and $cat_name (gt (len $items) 0) }}
+        {{ $categories = $categories | append (dict "name" $cat_name "items" $items) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $badgeStyles := slice 
+  "bg-amber-50 dark:bg-amber-500/10 text-amber-800 dark:text-amber-100 border-amber-200 dark:border-amber-600"
+  "bg-sky-50 dark:bg-sky-500/10 text-sky-800 dark:text-sky-100 border-sky-200 dark:border-sky-600"
+  "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-800 dark:text-emerald-100 border-emerald-200 dark:border-emerald-600"
+  "bg-violet-50 dark:bg-violet-500/10 text-violet-800 dark:text-violet-100 border-violet-200 dark:border-violet-600"
+  "bg-rose-50 dark:bg-rose-500/10 text-rose-800 dark:text-rose-100 border-rose-200 dark:border-rose-600"
+}}
+
+<div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 py-6">
+  {{ with $title }}
+  <div class="text-center mb-8">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-white">{{ . | emojify }}</h2>
+  </div>
+  {{ end }}
+
+  {{ if gt (len $categories) 0 }}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {{ range $cat_idx, $category := $categories }}
+      <div class="space-y-4 rounded-3xl border border-gray-200/70 dark:border-white/10 bg-white dark:bg-slate-900 p-6 shadow-sm shadow-slate-900/5">
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white text-center">{{ index $category "name" }}</h3>
+        <div class="space-y-3">
+          {{ range $item_idx, $item := index $category "items" }}
+            {{ $style_idx := mod $item_idx (len $badgeStyles) }}
+            {{ $badge := index $badgeStyles $style_idx }}
+            <div class="rounded-2xl border px-4 py-3 text-sm font-medium {{ $badge }} shadow-sm">
+              {{ index $item "name" | emojify }}
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

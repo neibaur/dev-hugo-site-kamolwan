@@ -1,0 +1,180 @@
+{{/* Hugo Blox: Work Experience Only */}}
+{{/* Custom block to show only work experience section */}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+{{ $design := $block.design }}
+{{ if not (reflect.IsMap $design) }}{{ $design = dict }}{{ end }}
+
+{{ $username := "me" }}
+{{ $username_raw := index $content "username" }}
+{{ if eq (printf "%T" $username_raw) "string" }}
+  {{ $username = strings.TrimSpace $username_raw }}
+{{ end }}
+{{ $profile := partial "functions/get_author_profile" $username }}
+
+{{ $date_format := "Jan 2006" }}
+{{ $date_format_raw := index $design "date_format" }}
+{{ if eq (printf "%T" $date_format_raw) "string" }}
+  {{ $date_format = strings.TrimSpace $date_format_raw | default "Jan 2006" }}
+{{ end }}
+
+{{ $experience_raw := or $profile.experience $profile.work }}
+{{ $experience_iter := slice }}
+{{ if reflect.IsSlice $experience_raw }}
+  {{ $experience_iter = $experience_raw }}
+{{ else if and $experience_raw (reflect.IsMap $experience_raw) }}
+  {{ $experience_iter = slice $experience_raw }}
+{{ end }}
+
+{{ $experience := slice }}
+{{ if gt (len $experience_iter) 0 }}
+  {{ range $experience_iter }}
+    {{ if reflect.IsMap . }}
+      {{ $role := "" }}
+      {{ $role_raw := index . "role" | default (index . "position") }}
+      {{ if ne $role_raw nil }}{{ $role = printf "%v" $role_raw }}{{ end }}
+      {{ $org := "" }}
+      {{ $org_raw := index . "org" | default (index . "company") | default (index . "organization") }}
+      {{ if ne $org_raw nil }}{{ $org = printf "%v" $org_raw }}{{ end }}
+      {{ $start := "" }}
+      {{ $start_raw := index . "start" | default (index . "date_start") }}
+      {{ if ne $start_raw nil }}{{ $start = printf "%v" $start_raw }}{{ end }}
+      {{ $end := "" }}
+      {{ $end_raw := index . "end" | default (index . "date_end") }}
+      {{ if ne $end_raw nil }}{{ $end = printf "%v" $end_raw }}{{ end }}
+      {{ $summary := "" }}
+      {{ $summary_raw := index . "summary" | default (index . "description") }}
+      {{ if ne $summary_raw nil }}{{ $summary = printf "%v" $summary_raw }}{{ end }}
+      {{ $icon := "" }}
+      {{ $icon_raw := index . "icon" }}
+      {{ if eq (printf "%T" $icon_raw) "string" }}
+        {{ $icon = strings.TrimSpace $icon_raw }}
+      {{ end }}
+      {{ $tags := slice }}
+      {{ $tags_raw := index . "tags" }}
+      {{ if reflect.IsSlice $tags_raw }}
+        {{ $tags = $tags_raw }}
+      {{ end }}
+      {{ $button_raw := index . "button" }}
+      {{ $button_url := "" }}
+      {{ $button_text := "" }}
+      {{ $button_icon := "" }}
+      {{ if reflect.IsMap $button_raw }}
+        {{ with index $button_raw "url" }}{{ $button_url = strings.TrimSpace (printf "%v" .) }}{{ end }}
+        {{ with index $button_raw "text" }}{{ $button_text = strings.TrimSpace (printf "%v" .) }}{{ end }}
+        {{ with index $button_raw "icon" }}{{ $button_icon = strings.TrimSpace (printf "%v" .) }}{{ end }}
+      {{ end }}
+
+      {{ if or $role $org }}
+        {{ $experience = $experience | append (dict "role" $role "org" $org "start" $start "end" $end "summary" $summary "icon" $icon "tags" $tags "button" (dict "url" $button_url "text" $button_text "icon" $button_icon)) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+
+{{ if gt (len $experience) 0 }}
+<div class="w-full">
+  <h2 class="mb-10 text-3xl font-bold text-gray-900 dark:text-white text-center">{{ i18n "work_experience" | default "Work Experience" }}</h2>
+
+  {{/* Timeline container */}}
+  <div class="relative">
+    {{/* Gradient timeline line */}}
+    <div class="absolute left-4 sm:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-secondary-500 via-secondary-400 to-secondary-600/50"></div>
+
+    {{/* Experience items */}}
+    <div class="space-y-8">
+      {{ range $idx, $item := $experience }}
+      {{/* Card wrapper */}}
+      <div class="group relative pl-12 sm:pl-16">
+
+        {{/* Timeline marker */}}
+        <div class="absolute left-0 sm:left-2 top-6 flex items-center justify-center">
+          {{/* Glowing dot */}}
+          <div class="relative">
+            <div class="absolute inset-0 w-8 h-8 bg-secondary-500/30 rounded-full blur-md group-hover:bg-secondary-500/50 transition-all duration-300"></div>
+            <div class="relative w-8 h-8 bg-white dark:bg-gray-900 border-2 border-secondary-500 rounded-full flex items-center justify-center group-hover:border-secondary-400 group-hover:scale-110 transition-all duration-300">
+              {{ if index $item "icon" }}
+                {{ partial "functions/get_icon" (dict "name" (index $item "icon") "attributes" "class='w-4 h-4 text-secondary-600 dark:text-secondary-400'") }}
+              {{ else }}
+                {{ partial "functions/get_icon" (dict "name" "briefcase" "attributes" "class='w-4 h-4 text-secondary-600 dark:text-secondary-400'") }}
+              {{ end }}
+            </div>
+          </div>
+        </div>
+
+        {{/* Content card */}}
+        <div class="relative bg-white dark:bg-white/[0.02] backdrop-blur-sm rounded-xl border border-gray-200 dark:border-white/[0.06] p-6 hover:bg-gray-50 dark:hover:bg-white/[0.04] hover:border-primary-300 dark:hover:border-primary-500/30 transition-all duration-300 group-hover:translate-x-1 shadow-sm dark:shadow-none">
+
+          {{/* Header row */}}
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+            <div>
+              {{/* Role/Position */}}
+              <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                {{ index $item "role" }}
+              </h3>
+              {{/* Company */}}
+              <p class="text-primary-600 dark:text-primary-400 font-medium mt-1">
+                {{ index $item "org" }}
+              </p>
+            </div>
+            {{/* Date */}}
+            <div class="flex-shrink-0 text-sm text-gray-500 dark:text-gray-400 font-medium">
+              {{ if index $item "start" }}
+                {{ (index $item "start") | time.Format $date_format }}
+                {{ if index $item "end" }}
+                  – {{ (index $item "end") | time.Format $date_format }}
+                {{ else }}
+                  – Present
+                {{ end }}
+              {{ end }}
+            </div>
+          </div>
+
+          {{/* Summary */}}
+          {{ if index $item "summary" }}
+          <div class="prose prose-slate dark:prose-invert max-w-none mb-4">
+            {{ (index $item "summary") | $page.RenderString | emojify }}
+          </div>
+          {{ end }}
+
+          {{/* Tags */}}
+          {{ if gt (len (index $item "tags")) 0 }}
+          <div class="flex flex-wrap gap-2 mb-4">
+            {{ range index $item "tags" }}
+            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-100 dark:bg-primary-900/50 text-primary-800 dark:text-primary-200">
+              {{ . }}
+            </span>
+            {{ end }}
+          </div>
+          {{ end }}
+
+          {{/* Button */}}
+          {{ if and (index $item "button") (index (index $item "button") "url") }}
+          <div class="pt-4 border-t border-gray-100 dark:border-white/5">
+            <a href="{{ index (index $item "button") "url" | safeURL }}" {{ if strings.HasPrefix (index (index $item "button") "url") "http" }}target="_blank" rel="noopener"{{ end }} class="inline-flex items-center gap-2 text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-secondary-600 dark:hover:text-secondary-400 transition-colors">
+              {{ if index (index $item "button") "icon" }}
+                {{ partial "functions/get_icon" (dict "name" (index (index $item "button") "icon") "attributes" "class='w-4 h-4'") }}
+              {{ else }}
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              {{ end }}
+              {{ index (index $item "button") "text" }}
+            </a>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>
+{{ end }}
+
+</div>
