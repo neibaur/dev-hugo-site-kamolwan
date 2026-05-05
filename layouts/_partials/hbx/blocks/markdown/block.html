@@ -1,0 +1,24 @@
+{{/* Hugo Blox: Markdown */}}
+{{/* Local override: accessible slate text pairs for section headings. */}}
+
+{{/* Initialise */}}
+{{ $page := .wcPage }}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+{{ $title := "" }}
+{{ with index $content "title" }}{{ $title = printf "%v" . | emojify | $page.RenderString }}{{ end }}
+{{ $text := "" }}
+{{ with index $content "text" }}{{ $text = printf "%v" . | emojify | $page.RenderString | safeHTML }}{{ end }}
+
+<div class="flex flex-col items-center max-w-prose mx-auto gap-3 justify-center px-6">
+
+  {{ with $title }}
+  <div class="markdown-block-heading mb-6 text-3xl font-bold text-slate-900 dark:text-slate-50">
+    {{ . }}
+  </div>
+  {{ end }}
+
+  {{/* We use DIV rather than P to support `prose` class and multiple paragraphs */}}
+  {{ with $text }}<div class="prose prose-slate lg:prose-xl dark:prose-invert max-w-prose text-slate-700 dark:text-slate-300">{{ . }}</div>{{ end }}
+</div>

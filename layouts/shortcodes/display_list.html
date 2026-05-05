@@ -2,36 +2,37 @@
 {{ $key := .Get "key" }}
 {{ $header := .Get "header" }}
 
-<div class="mt-4">
-  <div class="mb-3 border-b border-gray-100 dark:border-gray-800 pb-1">
-    <h3 class="text-2xl font-bold text-gray-900 dark:text-white m-0 tracking-tight">
+<div class="display-list mt-4">
+  <div class="mb-3 border-b border-slate-200 dark:border-slate-700 pb-1">
+    <h3 class="display-list-heading text-2xl font-bold text-slate-900 dark:text-slate-50 m-0 tracking-tight">
       {{ $header }}
     </h3>
   </div>
-  
+
   <div class="ml-12">
     {{ $data := index .Site.Data.authors.me $key }}
     {{ range $data }}
       {{ if or (eq $type "all") (and (eq $type "featured") .featured) }}
-        <div class="mb-4"> {{ if .url }}
-            <a href="{{ .url }}" target="_blank" class="block font-bold text-blue-600 dark:text-blue-400 hover:underline text-md leading-tight">
+        <div class="mb-4">
+          {{ if .url }}
+            <a href="{{ .url }}" target="_blank" class="display-list-title block font-bold text-sky-700 dark:text-sky-300 hover:underline text-md leading-tight">
               {{ .title }}
             </a>
           {{ else }}
-            <span class="block font-bold text-gray-900 dark:text-white text-md leading-tight">{{ .title }}</span>
+            <span class="display-list-title block font-bold text-slate-800 dark:text-slate-100 text-md leading-tight">{{ .title }}</span>
           {{ end }}
 
-          <p class="text-sm text-gray-600 dark:text-gray-400 m-0 leading-tight mt-1 ml-2 border-l-2 border-gray-100 dark:border-gray-800 pl-2">
-            {{ if .rank }}<strong>{{ .rank }}</strong><span class="mx-1">•</span>{{ end }}
-            
+          <p class="display-list-meta text-sm text-slate-600 dark:text-slate-400 m-0 leading-tight mt-1 ml-2 border-l-2 border-slate-200 dark:border-slate-700 pl-2">
+            {{ if .rank }}<strong>{{ .rank }}</strong><span class="mx-1">-</span>{{ end }}
+
             {{ if .id }}
-              Credential ID: 
-              <a href="{{ .verify_url | default "#" }}" target="_blank" class="font-mono font-bold text-primary-600 hover:underline">
+              Credential ID:
+              <a href="{{ .verify_url | default "#" }}" target="_blank" class="font-mono font-bold text-sky-700 dark:text-sky-300 hover:underline">
                 {{ .id }}
               </a>
-              <span class="mx-1">•</span>
+              <span class="mx-1">-</span>
             {{ end }}
-            
+
             {{ .date }}
           </p>
         </div>
