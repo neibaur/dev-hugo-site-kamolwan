@@ -12,7 +12,7 @@ name:
 postnominals:
   - Master's
 status:
-  icon: "hero/calculator"
+  icon: "🧮"
 role: |
   {{< sidebar_title
       title="Accounting & Finance Professional"
@@ -20,7 +20,7 @@ role: |
 
   {{< sidebar_button
       text="Download Resume"
-      url="/uploads/resume.pdf"
+      url="/uploads/Joy_Kamolowan_Paramee_resume.pdf"
       icon="PDF" >}}
 bio: |
   I am an accounting and finance professional with hands-on experience in full-cycle
