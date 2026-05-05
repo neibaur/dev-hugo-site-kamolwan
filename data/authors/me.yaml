@@ -74,6 +74,12 @@ education:
       cross-cultural commercial context. Degree title is intentionally stated without
       using "MBA" unless supported by the official transcript wording.
     icon: academic-cap
+  - degree: B.A. in Business Administration with a minor in Marketing
+    institution: Assumption Universtity (Thailand)
+    end: 2002-12-15
+    summary: |
+      Focused on business, business operations with a minor in Marketing.
+    icon: academic-cap
 
 experience:
   - role: Tax Preparer
@@ -182,13 +188,13 @@ awards:
   - title: Client-Facing Tax Preparation
     featured: true
     awarder: H&R Block
-    date: "2026"
+    date: "2020"
     summary: Prepared tax returns in a deadline-driven service environment with attention to documentation, privacy, and procedural quality.
     icon: receipt-percent
   - title: Compliance-Focused Customer Service
     featured: true
     awarder: Airline Operations
-    date: "2026"
+    date: "2011"
     summary: Built strong habits in regulated operations, safety procedures, professional communication, and reliable customer support.
     icon: shield-check
 
