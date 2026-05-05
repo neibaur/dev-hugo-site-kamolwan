@@ -1,0 +1,62 @@
+{{/* Hugo Blox: Languages */}}
+{{/* Local override: plain proficiency wording for a professional resume page. */}}
+
+{{/* Initialise */}}
+{{ $block := .wcBlock }}
+{{ $content := $block.content }}
+{{ if not (reflect.IsMap $content) }}{{ $content = dict }}{{ end }}
+
+{{ $username := "me" }}
+{{ $username_raw := index $content "username" }}
+{{ if eq (printf "%T" $username_raw) "string" }}
+  {{ $username = strings.TrimSpace $username_raw }}
+{{ end }}
+{{ $profile := partial "functions/get_author_profile" $username }}
+
+{{ $langs_raw := $profile.languages }}
+{{ $langs_iter := slice }}
+{{ if reflect.IsSlice $langs_raw }}
+  {{ $langs_iter = $langs_raw }}
+{{ else if and $langs_raw (reflect.IsMap $langs_raw) }}
+  {{ $langs_iter = slice $langs_raw }}
+{{ end }}
+
+{{ $langs := slice }}
+{{ if gt (len $langs_iter) 0 }}
+  {{ range $langs_iter }}
+    {{ if reflect.IsMap . }}
+      {{ $name := "" }}
+      {{ $label := "" }}
+      {{ with index . "name" }}{{ $name = strings.TrimSpace (printf "%v" .) }}{{ end }}
+      {{ with index . "label" }}{{ $label = strings.TrimSpace (printf "%v" .) }}{{ end }}
+      {{ if $name }}
+        {{ $langs = $langs | append (dict "name" $name "label" $label) }}
+      {{ end }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ $title := "" }}
+{{ $title_raw := index $content "title" }}
+{{ if $title_raw }}{{ $title = strings.TrimSpace (printf "%v" $title_raw) }}{{ end }}
+
+<div class="mx-auto flex max-w-3xl flex-col items-center gap-6 px-4 sm:px-6 lg:px-8">
+  {{ with $title }}
+  <h2 class="text-3xl font-bold text-slate-900 dark:text-slate-50">
+    {{ . | markdownify | emojify }}
+  </h2>
+  {{ end }}
+
+  {{ if gt (len $langs) 0 }}
+  <div class="grid w-full grid-cols-1 gap-3 sm:grid-cols-3">
+    {{ range $langs }}
+    <div class="rounded-lg border border-slate-200 bg-white px-5 py-4 text-center shadow-sm dark:border-slate-700 dark:bg-slate-900/90">
+      <div class="text-lg font-semibold text-slate-900 dark:text-slate-100">{{ index . "name" }}</div>
+      {{ with index . "label" }}
+      <div class="mt-1 text-sm font-medium text-slate-600 dark:text-slate-300">{{ . }}</div>
+      {{ end }}
+    </div>
+    {{ end }}
+  </div>
+  {{ end }}
+</div>

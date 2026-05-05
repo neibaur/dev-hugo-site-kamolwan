@@ -74,9 +74,15 @@
   {{ $text = strings.TrimSpace (printf "%v" $text_raw) }}
 {{ end }}
 
+{{ $style := "" }}
+{{ $style_raw := index $content "style" }}
+{{ if $style_raw }}
+  {{ $style = strings.TrimSpace (printf "%v" $style_raw) }}
+{{ end }}
+
 <div class="flex flex-col items-center max-w-4xl mx-auto gap-3 justify-center">
 
-  <div class="mb-6 text-3xl font-bold text-gray-900 dark:text-white">
+  <div class="mb-6 text-3xl font-bold text-slate-900 dark:text-slate-50">
     {{ $title | markdownify | emojify }}
   </div>
 
@@ -84,10 +90,23 @@
 
 <div class="w-full">
 {{ if gt (len $awards) 0 }}
+{{ if eq $style "compact-list" }}
+  <ul class="mx-auto w-full max-w-3xl space-y-3">
+  {{ range $award := $awards }}
+    <li class="flex gap-3 rounded-lg border border-slate-200 bg-white px-5 py-4 text-slate-800 shadow-sm dark:border-slate-700 dark:bg-slate-900/90 dark:text-slate-100">
+      {{- $icon := index $award "icon" | default "check-circle" }}
+      <span class="mt-0.5 inline-flex h-6 w-6 shrink-0 items-center justify-center text-primary-600 dark:text-primary-300">
+        {{ partial "functions/get_icon" (dict "name" $icon "attributes" "class='h-5 w-5'") }}
+      </span>
+      <span class="text-base leading-relaxed">{{ index $award "title" | markdownify | emojify }}</span>
+    </li>
+  {{ end }}
+  </ul>
+{{ else }}
   {{/* Two-column grid layout */}}
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
   {{ range $idx, $award := sort $awards "date_sort" "desc" }}
-  <div class="w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+  <div class="w-full p-6 bg-white border border-slate-200 rounded-lg shadow dark:bg-slate-900/90 dark:border-slate-700">
     {{- $icon := index $award "icon" }}
     {{ $award_url := index $award "url" }}
     {{ $award_link := "" }}
@@ -105,7 +124,7 @@
       {{ end }}
     {{ end }}
     {{ if $award_link }}<a href="{{ $award_link | safeURL }}" {{ $award_target | safeHTMLAttr }}>{{ end }}
-      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-gray-900 dark:text-white flex items-center gap-2">
+      <h5 class="mb-2 text-2xl font-semibold tracking-tight text-slate-800 dark:text-slate-100 flex items-center gap-2">
         {{ with $icon }}
           <span class="inline-flex items-center justify-center w-7 h-7 text-primary-600 dark:text-primary-300">
             {{ partial "functions/get_icon" (dict "name" . "attributes" "class='w-6 h-6'") }}
@@ -115,7 +134,7 @@
       </h5>
     {{ if $award_link }}</a>{{ end }}
 
-    <div class="block mb-3 text-sm font-normal leading-none text-gray-500 dark:text-gray-300">
+    <div class="block mb-3 text-sm font-normal leading-none text-slate-500 dark:text-slate-400">
       {{ $awarder := index $award "awarder" }}
       {{ if $awarder }}{{ $awarder }} &#8729;{{ end }}
       {{ $date_value := index $award "date" }}
@@ -140,7 +159,7 @@
     </div>
 
     {{ with index $award "summary" }}
-    <div class="mb-3 font-normal text-gray-500 dark:text-gray-400 prose">{{ . | markdownify | emojify }}</div>
+    <div class="mb-3 font-normal text-slate-700 dark:text-slate-300 prose dark:prose-invert">{{ . | markdownify | emojify }}</div>
     {{end}}
 
     {{ $certificate_url := index $award "certificate_url" }}
@@ -166,6 +185,7 @@
   </div>
   {{end}}
   </div>
+{{end}}
 {{end}}
 </div>
 </div>

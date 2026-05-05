@@ -1,12 +1,12 @@
 <div class="mt-4 w-full" style="padding: 0 10px;">
-  <a href="{{ .Get "url" }}" 
-     target="_blank" 
+  <a href="{{ .Get "url" }}"
+     target="_blank"
      class="flex items-center justify-center gap-2 no-underline hover:no-underline shadow-lg"
      style="
         display: flex;
         width: 100%;
         padding: 10px 20px;
-        background: linear-gradient(90deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%);
+        background: linear-gradient(90deg, #0f172a 0%, #115e59 55%, #047857 100%);
         color: white !important;
         font-weight: 800;
         border-radius: 8px;
@@ -15,7 +15,7 @@
         text-align: center;
         font-size: 0.95rem;
      ">
-    <span style="font-size: 1.2rem; line-height: 1;">{{ .Get "icon" | default "📥" }}</span>
+    <span style="font-size: 0.8rem; line-height: 1; letter-spacing: 0.04em;">{{ .Get "icon" | default "PDF" }}</span>
     {{ .Get "text" }}
   </a>
 </div>

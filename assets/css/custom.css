@@ -8,3 +8,102 @@
 .wide-block .max-w-prose {
   max-width: 85ch; /* Approximately 30% wider than default prose width (65ch) */
 }
+
+:root {
+  --joy-navy: #0f172a;
+  --joy-slate: #334155;
+  --joy-emerald: #047857;
+  --joy-surface: #f8fafc;
+}
+
+html:not(.dark) body {
+  background:
+    linear-gradient(180deg, rgba(248, 250, 252, 0.96), rgba(255, 255, 255, 1))
+    var(--joy-surface);
+}
+
+html:not(.dark) .hbb-section:first-of-type {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.04), rgba(4, 120, 87, 0.08));
+}
+
+.dark .hbb-section:first-of-type {
+  background: linear-gradient(135deg, rgba(15, 23, 42, 0.98), rgba(6, 78, 59, 0.38));
+}
+
+/* === Bright/Light Mode Accessibility Contrast Fix === */
+html:not(.dark) body {
+  color: #1e293b; /* Slate-800 */
+}
+
+html:not(.dark) .prose,
+html:not(.dark) .resume-biography-3,
+html:not(.dark) .work-experience,
+html:not(.dark) .education,
+html:not(.dark) .section-subheading,
+html:not(.dark) .text-muted,
+html:not(.dark) .text-gray-500,
+html:not(.dark) .text-gray-600 {
+  color: var(--joy-slate) !important;
+}
+
+html:not(.dark) h1,
+html:not(.dark) h2,
+html:not(.dark) h3,
+html:not(.dark) h4,
+html:not(.dark) .section-heading h1,
+html:not(.dark) .section-heading h2,
+html:not(.dark) .article-title a {
+  color: var(--joy-navy) !important;
+}
+
+html:not(.dark) .bg-white,
+html:not(.dark) .card,
+html:not(.dark) .article-style,
+html:not(.dark) .home-section {
+  color: #1e293b;
+}
+
+html:not(.dark) a {
+  color: #0369a1 !important; /* Sky-700 */
+}
+
+html:not(.dark) a:hover {
+  color: #075985 !important; /* Sky-800 */
+}
+
+/* === Education Dark Mode Contrast Fix === */
+.dark .education-timeline {
+  color: #cbd5e1;
+}
+
+.dark .education-card-title {
+  color: #f8fafc;
+}
+
+.dark .education-card-summary,
+.dark .education-card-summary p,
+.dark .education-card-summary li {
+  color: #cbd5e1;
+}
+
+.dark .education-card-institution {
+  color: #7dd3fc;
+}
+
+.dark .education-card-date {
+  color: #94a3b8;
+}
+
+/* === Snapshot/Highlight Dark Mode Contrast Fix === */
+.dark .display-list-heading,
+.dark .markdown-block-heading {
+  color: #f8fafc;
+}
+
+.dark .display-list-title {
+  color: #e2e8f0;
+}
+
+.dark .display-list-meta {
+  color: #94a3b8;
+}

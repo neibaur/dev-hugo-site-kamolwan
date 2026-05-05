@@ -212,11 +212,11 @@
 
           {{/* Name with optional ruby pronunciation */}}
           {{ if and $profile.title $name_pronunciation }}
-            <h1 class="{{ $name_class }} font-black text-gray-900 dark:text-white leading-tight">
+            <h1 class="{{ $name_class }} font-black text-slate-900 dark:text-slate-50 leading-tight">
               <ruby class="hb-ruby-name">{{ $profile.title }}<rt>{{ $name_pronunciation }}</rt></ruby>
             </h1>
           {{ else }}
-            <h1 class="{{ $name_class }} font-black text-gray-900 dark:text-white leading-tight">
+            <h1 class="{{ $name_class }} font-black text-slate-900 dark:text-slate-50 leading-tight">
               {{ $profile.title }}
             </h1>
           {{ end }}
@@ -238,7 +238,7 @@
             {{ end }}
           {{ end }}
           {{ with $role_text }}
-            <p class="text-2xl font-semibold text-primary-600 dark:text-primary-400">{{ . | markdownify | emojify }}</p>
+            <p class="text-2xl font-semibold text-primary-600 dark:text-sky-300">{{ . | markdownify | emojify }}</p>
           {{ end }}
           
           {{ $affiliations_raw := $profile.affiliations }}
@@ -372,9 +372,9 @@
                 {{ $about_heading = $about_heading_raw }}
               {{ end }}
             {{ end }}
-            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">{{ $about_heading }}</h2>
+            <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-slate-50 tracking-tight">{{ $about_heading }}</h2>
           </div>
-          <div class="prose prose-lg dark:prose-invert text-gray-800 dark:text-gray-200 text-base sm:text-lg leading-relaxed">
+          <div class="prose prose-lg dark:prose-invert text-slate-700 dark:text-slate-300 text-base sm:text-lg leading-relaxed">
             <div class="bio-text" {{ if $bio_style }}{{ (printf "style=\"%s\"" $bio_style) | safeHTMLAttr }}{{ end }}>
               {{ . }}
             </div>
@@ -433,7 +433,7 @@
                 {{ $education_heading = $education_heading_raw }}
               {{ end }}
             {{ end }}
-            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white tracking-tight">{{ $education_heading | markdownify }}</h3>
+            <h3 class="text-xl sm:text-2xl lg:text-3xl font-bold text-slate-900 dark:text-slate-50 tracking-tight">{{ $education_heading | markdownify }}</h3>
           </div>
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {{ range $education }}
@@ -465,7 +465,7 @@
                 </div>
                 <div class="flex-1 flex-grow">
                   {{ if $degree }}
-                  <p class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors">
+                  <p class="text-xl font-bold text-slate-900 dark:text-slate-100 group-hover:text-primary-600 dark:group-hover:text-sky-300 transition-colors">
                     {{ $degree }}
                   </p>
                   {{ end }}
@@ -478,7 +478,7 @@
                     </p>
                   {{ end }}
                   {{ if $institution }}
-                    <p class="text-gray-700 dark:text-gray-300 text-base">{{ $institution }}</p>
+                    <p class="text-slate-700 dark:text-slate-300 text-base">{{ $institution }}</p>
                   {{ end }}
                 </div>
               </div>
@@ -512,7 +512,7 @@
             {{ if ne $interests_heading_raw "" }}
               {{ $interests_heading = $interests_heading_raw }}
             {{ end }}
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">{{ $interests_heading | markdownify }}</h3>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50 tracking-tight">{{ $interests_heading | markdownify }}</h3>
           </div>
           {{ end }}
           <div class="flex flex-wrap gap-3">
@@ -555,16 +555,24 @@
             {{ if ne $ongoing_heading_raw "" }}
               {{ $ongoing_heading = $ongoing_heading_raw }}
             {{ end }}
-            <h3 class="text-xl font-bold text-gray-900 dark:text-white tracking-tight">{{ $ongoing_heading | markdownify }}</h3>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-slate-50 tracking-tight">{{ $ongoing_heading | markdownify }}</h3>
           </div>
           {{ end }}
           <ul class="space-y-2 list-disc list-inside !ml-7" style="list-style-type: disc; margin-left: 2rem;">
             {{ range $ongoing }}
-            {{ $item := strings.TrimSpace (printf "%v" .) }}
+            {{ $item := "" }}
+            {{ $url := "" }}
+            {{ if reflect.IsMap . }}
+              {{ with index . "text" }}{{ $item = strings.TrimSpace (printf "%v" .) }}{{ end }}
+              {{ with index . "url" }}{{ $url = strings.TrimSpace (printf "%v" .) }}{{ end }}
+            {{ else }}
+              {{ $item = strings.TrimSpace (printf "%v" .) }}
+            {{ end }}
             {{ if $item }}
             {{ $id := $item | lower | replaceRE `\s+` `-` | replaceRE `[^a-z0-9-]` `` }}
+            {{ $href := $url | default (printf "/experience/#%s" $id) | relLangURL }}
             <li>
-              <a href="/experience/#{{ $id }}" class="text-base font-medium text-gray-900 dark:text-gray-100 hover:text-primary-600 dark:hover:text-primary-400 transition-colors">
+              <a href="{{ $href }}" class="text-base font-medium text-slate-900 dark:text-slate-100 hover:text-primary-600 dark:hover:text-sky-300 transition-colors">
                 {{ $item | markdownify | emojify }}
               </a>
             </li>

@@ -4,9 +4,9 @@ Guidance for AI coding agents working in this repository.
 
 ## Repository Purpose
 
-This is the source repository for [isaacneibaur.com](https://isaacneibaur.com), Isaac Neibaur's Hugo Blox portfolio. It is a static Hugo portfolio site, not a Python dashboard, Astro app, or monorepo. Keep changes lightweight and appropriate for a personal portfolio.
+This is the source repository for [kamolwan.com](https://kamolwan.com), Kamolwan (Joy) Paramee's Hugo Blox portfolio. It is a static Hugo portfolio site, not a Python dashboard, Astro app, or monorepo. Keep changes lightweight and appropriate for a personal accounting and finance portfolio.
 
-Production is generated from this repo and deployed by GitHub Actions to [`neibaur/github.io`](https://github.com/neibaur/github.io), which serves `isaacneibaur.com`.
+Production is generated from this repo and deployed by GitHub Actions to `kamolwan/kamolwan.github.io`, which serves `kamolwan.com`.
 
 ## Branch Policy
 
@@ -83,7 +83,7 @@ Do not add Python, Astro, database, service-worker, or dashboard-style tooling u
 
 ## Content Standards
 
-- Keep portfolio content factual, current, and specific to Isaac's work.
+- Keep portfolio content factual, current, and specific to Joy's accounting, bookkeeping, tax preparation, and business operations background.
 - Remove or quarantine Hugo Blox starter/demo content that dilutes the personal brand.
 - Use `_drafts/` for archived starter material that should not build into the public site.
 - Keep public pages focused on biography, experience, education/certifications, projects, publications, events, and contact paths.
@@ -94,8 +94,8 @@ Do not add Python, Astro, database, service-worker, or dashboard-style tooling u
 Production deploys are cross-repo:
 
 1. This repo is built by GitHub Actions.
-2. Generated output from `public/` is pushed to `neibaur/github.io`.
-3. `neibaur/github.io` serves `isaacneibaur.com`.
+2. Generated output from `public/` is pushed to `kamolwan/kamolwan.github.io`.
+3. `kamolwan/kamolwan.github.io` serves `kamolwan.com`.
 
 Any deployment or workflow change must account for that cross-repo publishing model.
 

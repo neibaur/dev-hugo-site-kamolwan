@@ -52,7 +52,7 @@ A modern, developer-focused hero section optimized for dark mode with gradient e
       - text: View Projects
         url: "#projects"
       - text: Download Resume
-        url: "/resume.pdf"
+        url: "/Joy_Kamolowan_Paramee_resume.pdf"
         icon: document-arrow-down
   design:
     style: split
